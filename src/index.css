@@ -78,13 +78,13 @@ footer {
 .main-content > h2 {
   margin: 0;
   font-weight: 800;
-  font-size: 36px;
+  font-size: 33px;
 }
 
 
 .main-content > p {
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   margin-top: 10px;
   color:#161616;
 }
@@ -131,7 +131,7 @@ footer {
 
 .about-vans {
   margin: 20 0 40 0px;
-  height: 200px;
+  height: 180px;
   width: 98%;
   background-color: #FFCC8D;
   border-radius: 5px;
@@ -145,7 +145,7 @@ footer {
   text-align: left;
   margin: 0;
   font-weight: 700;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .about-vans > a {
@@ -153,10 +153,10 @@ footer {
   color:white;
   border: none;
   border-radius: 10px;
-  height: 45px;
+  height: 40px;
   width: 175px;
   font-weight: 700;
-  font-size: 16px;
+  font-size: 13px;
   text-decoration: none;
   display: flex;
   justify-content: center;
