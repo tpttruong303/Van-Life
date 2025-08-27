@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
+import banner from "../assets/banner_aboutpage.png"
 
 function About() {
      return (
           <main className="main-about">
-               <img src="../src/assets/banner_aboutpage.png"/>
+               <img src={banner}/>
                <div className="main-content">
                     <h2 className="title">
                          Don’t squeeze in a sedan when you could relax in a van.
