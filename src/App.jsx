@@ -1,4 +1,3 @@
-import { useEffect } from "react"
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import Home from "./pages/Home"
 import About from "./pages/About"
@@ -9,16 +8,6 @@ import Footer from "./components/Footer"
 import "./server.js"
 
 function App() {
-
-     useEffect(() => {
-          const fetchData = async () => {
-               const response = await fetch("/api/vans")
-               const data = await response.json()
-               console.log(data)
-          }
-
-          fetchData()    
-     }, [])
 
      return (
           <BrowserRouter>

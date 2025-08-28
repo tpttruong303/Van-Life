@@ -78,7 +78,7 @@ footer {
 .main-content > h2 {
   margin: 0;
   font-weight: 800;
-  font-size: 33px;
+  font-size: 24px;
 }
 
 
@@ -163,3 +163,114 @@ footer {
   align-items: center;
 }
 
+.selection-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.filter-button-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  width: 70%;
+}
+
+.filter-button-container > button {
+  background-color: #FFEAD0;
+  height: 33px;
+  width: 30%;
+  border: none;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #4D4D4D;
+}
+
+.filter-button-container .filter-button-simple:hover {
+  background-color: #E17654;
+  color: #FFEAD0;
+  cursor: pointer;
+}
+
+.filter-button-container .filter-button-luxury:hover {
+  background-color: #161616;
+  color: #FFEAD0;
+  cursor: pointer;
+}
+
+.filter-button-container .filter-button-rugged:hover {
+  background-color: #115E59;
+  color: #FFEAD0;
+  cursor: pointer;
+}
+
+.selection-container > span {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 100%;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: underline;
+  color: #4D4D4D;
+}
+
+.selection-container > span:hover {
+  cursor: pointer;
+  color: #161616;
+}
+
+.van-list-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  width: 100%;
+  gap: 20px;
+}
+
+.van-list-container .van-item {
+  height: 300px;
+}
+
+.van-item > img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.van-item .item-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+}
+
+.van-item .item-details > h3 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  color: #161616;
+}
+
+.van-item .item-details > span {
+  font-weight: 600;
+  font-size: 18px;
+  text-align: right;
+  color: #161616;
+  display: flex;
+  flex-direction: column;
+}
+
+.van-item .item-details > span > span {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.van-item .item-type {
+  border-radius: 5px;
+  height: 33px;
+  padding: 7px 20px;
+  font-weight: 600;
+  font-size: 12px;
+  color: #FFEAD0;
+  text-align: center;
+}
