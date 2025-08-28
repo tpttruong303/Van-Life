@@ -247,13 +247,13 @@ footer {
 .van-item .item-details > h3 {
   margin: 0;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
   color: #161616;
 }
 
 .van-item .item-details > span {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 15px;
   text-align: right;
   color: #161616;
   display: flex;
@@ -262,7 +262,7 @@ footer {
 
 .van-item .item-details > span > span {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .van-item .item-type {

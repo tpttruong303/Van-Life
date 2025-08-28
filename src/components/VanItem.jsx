@@ -11,9 +11,7 @@ function VanItem({vanObject}) {
                     <h3 className="item-title">{vanObject.name}</h3>
                     <span className="item-price">
                          ${vanObject.price}
-                         <span class="price-per-day">
-                              /day
-                         </span>
+                         <span>/day</span>
                     </span>     
                </div>
                <span className="item-type" style={styles}>
