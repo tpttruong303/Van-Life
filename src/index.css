@@ -24,13 +24,6 @@ header {
   padding: 25px;
 }
 
-header > a {
-  text-decoration: none;
-  font-weight: 900;
-  color: #000000;
-  font-size: 23px;
-}
-
 header > nav {
   display: flex;
   gap: 25px;
@@ -46,6 +39,17 @@ header > nav > a {
 header > nav > a:hover, a:focus {
   color: #161616;
   text-decoration: underline;
+}
+
+header > a {
+  text-decoration: none;
+  font-weight: 900;
+  color: #000000;
+  font-size: 23px;
+}
+
+header > a:focus {
+  text-decoration: none;
 }
 
 footer {
@@ -188,19 +192,19 @@ footer {
   color: #4D4D4D;
 }
 
-.filter-button-container .filter-button-simple:hover {
+.filter-button-container .filter-button-simple:hover, .filter-button-simple:focus {
   background-color: #E17654;
   color: #FFEAD0;
   cursor: pointer;
 }
 
-.filter-button-container .filter-button-luxury:hover {
+.filter-button-container .filter-button-luxury:hover, .filter-button-luxury:focus {
   background-color: #161616;
   color: #FFEAD0;
   cursor: pointer;
 }
 
-.filter-button-container .filter-button-rugged:hover {
+.filter-button-container .filter-button-rugged:hover, .filter-button-rugged:focus {
   background-color: #115E59;
   color: #FFEAD0;
   cursor: pointer;
