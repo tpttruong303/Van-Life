@@ -24,7 +24,7 @@ function VanDetail() {
 
      return (
           <div className="main-van-detail">
-               {vanInfo && <div className="main-content">
+               {vanInfo ? <div className="main-content">
                     <img src={vanInfo.imageUrl} />
                     <span style={styles}>{vanInfo.type}</span>
                     <h2>{vanInfo.name}</h2>
@@ -34,7 +34,7 @@ function VanDetail() {
                     </h3>
                     <p>{vanInfo.description}</p>
                     <button>Rent this van</button>
-               </div>}
+               </div> : <h2 className="loading">Loading...</h2>}
           </div>
      )
 }
