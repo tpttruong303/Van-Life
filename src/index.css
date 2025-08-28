@@ -228,6 +228,10 @@ footer {
   gap: 20px;
 }
 
+.van-list-container > a {
+  text-decoration: none;
+}
+
 .van-list-container .van-item {
   height: 300px;
 }
@@ -273,4 +277,70 @@ footer {
   font-size: 12px;
   color: #FFEAD0;
   text-align: center;
+}
+
+.main-van-detail .main-content > img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 40px;
+}
+
+.main-van-detail .main-content > span {
+  border-radius: 5px;
+  height: 33px;
+  width: 80px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #FFEAD0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main-van-detail .main-content > h2 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 27px;
+  color: #161616;
+  margin-bottom: 20px;
+}
+
+.main-van-detail .main-content > h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 23px;
+  color: #161616;
+  margin-bottom: 20px;
+}
+
+.main-van-detail .main-content > h3 > span {
+  font-weight: 500;
+  font-size: 17px;
+  color: #161616;
+}
+
+.main-van-detail .main-content > p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 13px;
+  color: #161616;
+  margin-bottom: 20px;
+  line-height: 160%;
+}
+
+.main-van-detail .main-content > button {
+  background-color: #FF8C38;
+  border: none;
+  border-radius: 5px;
+  height: 45px;
+  width: 100%;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  margin-bottom: 20px;
 }
