@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
-import VanItem from "../components/VanItem"
+import VanItem from "../../components/VanItem"
 
 function Vans() {
 
@@ -16,10 +15,8 @@ function Vans() {
           fetchVansData()
      }, [])
 
-     const vanListItems = vansInfo.map(van => 
-          <Link to={`/vans/${van.id}`} key={van.id}>
-               <VanItem vanObject={van} />
-          </Link>
+     const vanListItems = vansInfo.map(van =>
+          <VanItem vanObject={van} key={van.id}/>
      )
 
      return (

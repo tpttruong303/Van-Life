@@ -43,7 +43,7 @@ header > nav > a {
   color: #4D4D4D;
 }
 
-header > nav > a:hover {
+header > nav > a:hover, a:focus {
   color: #161616;
   text-decoration: underline;
 }
@@ -232,7 +232,7 @@ footer {
   text-decoration: none;
 }
 
-.van-list-container .van-item {
+.van-list-container > a .van-item {
   height: 300px;
 }
 
@@ -348,4 +348,29 @@ footer {
   text-decoration: none;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+.host-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+.host-layout > nav {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding: 20px 25px;
+  gap: 25px;
+}
+
+.host-layout > nav > a {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  color: #4D4D4D;
+}
+
+.host-layout > nav > a:hover, a:focus {
+  color: #161616;
+  text-decoration: underline;
 }
