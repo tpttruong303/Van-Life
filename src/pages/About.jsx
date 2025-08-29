@@ -3,7 +3,7 @@ import banner from "../assets/banner_aboutpage.png"
 
 function About() {
      return (
-          <main className="main-about">
+          <main className="about">
                <img src={banner}/>
                <div className="main-content">
                     <h2>
@@ -18,7 +18,7 @@ function About() {
                          Our team is full of vanlife enthusiasts who know firsthand the magic of touring the world on 4 wheels.
                     </p>
                     <div className="about-vans">
-                         <div className="title-container">
+                         <div className="title">
                               <h2>Your destination is waiting.</h2>
                               <h2>Your van is ready.</h2>
                          </div>

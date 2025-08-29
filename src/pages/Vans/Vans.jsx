@@ -31,7 +31,7 @@ function Vans() {
                          </div>
                          <span>Clear filters</span>
                     </div>
-                    <div className="van-list-container">
+                    <div className="main-vans-container">
                          {vanListItems}
                     </div>
                </div>

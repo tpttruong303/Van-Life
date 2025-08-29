@@ -11,7 +11,7 @@ function VanItem({vanObject}) {
      return (
           <Link to={`${vanObject.id}`}>
                <div className="van-item">
-                    <img src={vanObject.imageUrl}/>
+                    <img className="item-image" src={vanObject.imageUrl}/>
                     <div className="item-details">
                          <h3 className="item-title">{vanObject.name}</h3>
                          <span className="item-price">

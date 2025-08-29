@@ -7,6 +7,7 @@ function HostLayout() {
                <nav>
                     <Link to="/host">Dashboard</Link>
                     <Link to="/host/income">Income</Link>
+                    <Link to="/host/vans">Vans</Link>
                     <Link to="/host/review">Reviews</Link>
                </nav>
                <Outlet />

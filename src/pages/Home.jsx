@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 function Home() {
      return (
-          <main className="main-home">
+          <main className="home">
                <div className="main-content">
                     <h2>
                          You got the travel plans, we got the travel vans.
