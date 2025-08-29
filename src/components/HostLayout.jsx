@@ -5,10 +5,10 @@ function HostLayout() {
      return (
           <div className="host-layout">
                <nav>
-                    <Link to="/host">Dashboard</Link>
-                    <Link to="/host/income">Income</Link>
-                    <Link to="/host/vans">Vans</Link>
-                    <Link to="/host/review">Reviews</Link>
+                    <Link to=".">Dashboard</Link>
+                    <Link to="income">Income</Link>
+                    <Link to="vans">Vans</Link>
+                    <Link to="review">Reviews</Link>
                </nav>
                <Outlet />
           </div>

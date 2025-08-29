@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import VanItem from "../../components/VanItem"
+import { Link } from "react-router-dom"
 
 function Vans() {
 
@@ -15,9 +15,34 @@ function Vans() {
           fetchVansData()
      }, [])
 
-     const vanListItems = vansInfo.map(van =>
-          <VanItem vanObject={van} key={van.id}/>
-     )
+     const vanListItems = vansInfo.map(van => {
+          return (
+               <Link to={`${van.id}`}>
+                    <div className="van-item">
+                         <img className="item-image" src={van.imageUrl}/>
+                         <div className="item-details">
+                              <h3 className="item-title">{van.name}</h3>
+                              <span className="item-price">
+                                   ${van.price}
+                                   <span>/day</span>
+                              </span>     
+                         </div>
+                         <span 
+                              className="item-type" 
+                              style={{
+                                   backgroundColor: van.type === "simple" 
+                                   ? "#E17654" : van.type === "luxury" 
+                                   ? "#161616" : "#115E59"
+                              }}
+                         >
+
+                              {van.type}
+                              
+                         </span>
+                    </div>
+               </Link>
+          )
+     })
 
      return (
           <div className="main-vans">

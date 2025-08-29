@@ -11,7 +11,7 @@ function Home() {
                          Add adventure to your life by joining the #vanlife movement. 
                          Rent the perfect van to make your perfect road trip.
                     </p>
-                    <Link className="find-vans" to='/vans'>Find your van</Link>
+                    <Link className="find-vans" to='vans'>Find your van</Link>
                </div>
           </main>
      )

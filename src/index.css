@@ -287,6 +287,19 @@ footer {
   padding: 30px;
 }
 
+.main-van-detail .main-content > a {
+  color: #201F1D;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 30px;
+  text-decoration: none;
+}
+
+.main-van-detail .main-content > a > span{
+  margin-left: 15px;
+  text-decoration: underline;
+}
+
 .main-van-detail .main-content > img {
   width: 100%;
   border-radius: 5px;
@@ -427,6 +440,22 @@ footer {
 
 .host-van-detail {
   padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.host-van-detail > a {
+  color: #201F1D;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+
+.host-van-detail > a > span{
+  margin-left: 15px;
+  text-decoration: underline;
 }
 
 .host-van-detail .main-info {
@@ -484,7 +513,34 @@ footer {
   color: #4D4D4D;
 }
 
-.host-van-detail .detail-info {
+.host-van-detail > div > nav {
+  margin: 20 0px;
+  display: flex;
+  gap: 25px;
+}
+
+.host-van-detail > div > nav > a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  color: #4D4D4D;
+} 
+
+.host-van-detail > div > nav > a:hover {
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 15px;
+  color: #161616;
+}
+
+.host-van-detail > div > nav > a:focus {
+  text-decoration: underline;
+  font-weight: 700;
+  font-size: 15px;
+  color: #161616;
+}
+
+.host-van-detail > div .detail-info {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
@@ -492,4 +548,19 @@ footer {
   font-weight: 400;
   font-size: 14px;
   line-height: 21px;
+}
+
+.host-van-detail > div > img {
+  width: 30%;
+  border-radius: 5px;
+}
+
+.host-van-detail > div > h2 {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.host-van-detail > div > h2 > span {
+  font-weight: 500;
+  font-size: 16px;
 }
