@@ -36,7 +36,12 @@ header > nav > a {
   color: #4D4D4D;
 }
 
-header > nav > a:hover, a:focus {
+header > nav > a:hover {
+  color: #161616;
+  text-decoration: underline;
+}
+
+header > nav > a:focus {
   color: #161616;
   text-decoration: underline;
 }
@@ -387,7 +392,12 @@ footer {
   color: #4D4D4D;
 }
 
-.host-layout > nav > a:hover, a:focus {
+.host-layout > nav > a:hover {
+  color: #161616;
+  text-decoration: underline;
+}
+
+.host-layout > nav > a:focus {
   color: #161616;
   text-decoration: underline;
 }

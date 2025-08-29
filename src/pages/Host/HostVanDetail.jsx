@@ -35,7 +35,7 @@ function HostVanDetail() {
                          </div>
                     </div>
                     <nav>
-                         <Link to="info">Details</Link>
+                         <Link to=".">Details</Link>
                          <Link to="pricing">Pricing</Link>
                          <Link to="photos">Photos</Link>
                     </nav>
