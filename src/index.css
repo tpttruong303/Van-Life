@@ -186,33 +186,38 @@ footer {
   width: 70%;
 }
 
+.filter-button-container > a {
+  width: 30%;
+  text-decoration: none;
+}
+
 .filter-button-container > button {
   background-color: #FFEAD0;
   height: 33px;
-  width: 30%;
+  width: 100%;
   border: none;
   border-radius: 5px;
+  color: #4D4D4D;
+  text-transform: capitalize;
   font-size: 12px;
   font-weight: 500;
-  color: #4D4D4D;
+}
+
+.filter-button-container > button:hover, button:focus {
+  color: #FFEAD0;
+  cursor: pointer;
 }
 
 .filter-button-container .filter-button-simple:hover, .filter-button-simple:focus {
   background-color: #E17654;
-  color: #FFEAD0;
-  cursor: pointer;
 }
 
 .filter-button-container .filter-button-luxury:hover, .filter-button-luxury:focus {
   background-color: #161616;
-  color: #FFEAD0;
-  cursor: pointer;
 }
 
 .filter-button-container .filter-button-rugged:hover, .filter-button-rugged:focus {
   background-color: #115E59;
-  color: #FFEAD0;
-  cursor: pointer;
 }
 
 .selection-container > span {
@@ -246,6 +251,7 @@ footer {
 }
 
 .van-item .item-image {
+  height: 70%;
   width: 100%;
   border-radius: 5px;
   margin-bottom: 15px;
@@ -420,6 +426,8 @@ footer {
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: #FFEAD0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .host-van-item > img {
@@ -573,4 +581,18 @@ footer {
 .host-van-detail > div > h2 > span {
   font-weight: 500;
   font-size: 16px;
+}
+
+.not-found-page .main-content a >  button{
+  border-radius: 6px;
+  border: none;
+  background-color: #E17654;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 20 0px;
+  height: 50px;
+  width: 100%;
 }

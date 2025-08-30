@@ -1,23 +1,44 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { useSearchParams, Link } from "react-router-dom"
+
+import { getVans } from "../../api.js"
 
 function Vans() {
 
+     const [searchParams, setSearchParams] = useSearchParams()
+     const typeFilter = searchParams.get("type")
      const [vansInfo, setVansInfo] = useState([])
-
-     async function fetchVansData() {
-          const response = await fetch("/api/vans")
-          const data = await response.json()
-          setVansInfo(data.vans)
-     }
+     const [error, setError] = useState(null)
+     const [loading, setLoading] = useState(false)
 
      useEffect(() => {
-          fetchVansData()
+          async function loadingVans() {
+               try {
+                    setLoading(true)
+                    const data = await getVans()
+                    setVansInfo(data)
+               } catch (error) {
+                    setError(error)
+               } finally {
+                    setLoading(false)
+               }
+          }
+
+          loadingVans()
      }, [])
 
-     const vanListItems = vansInfo.map(van => {
+     const displayedVans = typeFilter ? 
+          vansInfo.filter(
+               van => van.type.toLowerCase() === typeFilter
+          ) : vansInfo
+
+     const vanListItems = displayedVans.map(van => {
           return (
-               <Link to={`${van.id}`}>
+               <Link 
+                    key={van.id} 
+                    to={van.id} 
+                    state={{ search:searchParams.toString() }}
+               >
                     <div className="van-item">
                          <img className="item-image" src={van.imageUrl}/>
                          <div className="item-details">
@@ -35,14 +56,32 @@ function Vans() {
                                    ? "#161616" : "#115E59"
                               }}
                          >
-
                               {van.type}
-                              
                          </span>
                     </div>
                </Link>
           )
      })
+
+     function handleFilterChange(key, value) {
+          setSearchParams(prevParams => {
+               if (value === null) prevParams.delete(key)
+               else prevParams.set(key, value) 
+               return prevParams
+          })
+     }
+
+     const typeButtons = ["simple", "luxury", "rugged"].map(
+          (type) => (
+               <button 
+                    onClick={() => handleFilterChange("type", type)} 
+                    className={`filter-button-${type}`}
+                    key={type}
+               >
+                    {type}
+               </button>
+          )
+     )
 
      return (
           <div className="main-vans">
@@ -50,15 +89,13 @@ function Vans() {
                     <h2>Explore your van options</h2>
                     <div className="selection-container">
                          <div className="filter-button-container">
-                              <button className="filter-button-simple">Simple</button>
-                              <button className="filter-button-luxury">Luxury</button>
-                              <button className="filter-button-rugged">Rugged</button>
+                              {typeButtons}
                          </div>
-                         <span>Clear filters</span>
+                         <span onClick={() => handleFilterChange("type", null)}>Clear filters</span>
                     </div>
-                    <div className="main-vans-container">
+                    {(!loading && !error) ? <div className="main-vans-container">
                          {vanListItems}
-                    </div>
+                    </div> :  <h2>{loading ? "Loading..." : error ? error.message : ""}</h2>}
                </div>
           </div>
      )
