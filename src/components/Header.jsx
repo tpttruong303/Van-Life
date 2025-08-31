@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
 
+import userIcon from "../assets/user_icon.png"
+
 function Header() {
      return (
           <header>
@@ -8,6 +10,9 @@ function Header() {
                     <Link to="host">Host</Link>
                     <Link to="about">About</Link>
                     <Link to="vans">Vans</Link>
+                    <Link to="login">
+                         <img src={userIcon} />
+                    </Link>
                </nav>
           </header>
      )
