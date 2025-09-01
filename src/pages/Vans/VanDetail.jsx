@@ -1,21 +1,14 @@
-import { useEffect, useState } from "react"
-import { useParams, Link, useLocation } from "react-router-dom"
+import { Link, useLocation, useLoaderData } from "react-router-dom"
+import { getVans } from "../../api"
+
+export async function loader({ params }) {
+     const data = await getVans(params.id)
+     return data
+}
 
 function VanDetail() {
-
-     const params = useParams()
      const location = useLocation()
-     const [vanInfo, setVanInfo] = useState(null)
-
-     async function fetchVanData() {
-          const response = await fetch(`/api/vans/${params.id}`)
-          const data = await response.json()
-          setVanInfo(data.vans)
-     }
-
-     useEffect(() => {
-          fetchVanData()
-     }, [params.id])
+     const vanInfo = useLoaderData()
 
      const styles = vanInfo ? {
           backgroundColor: vanInfo.type === "simple" ? 
