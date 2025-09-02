@@ -4,7 +4,6 @@ import {
      createBrowserRouter, 
      createRoutesFromElements 
 } from "react-router-dom"
-
 import Layout from "./components/Layout"
 import HostLayout from "./components/HostLayout.jsx"
 import NotFound from "./components/NotFound.jsx"
@@ -12,7 +11,7 @@ import ErrorElement from "./components/ErrorElement.jsx"
 
 import Home from "./pages/Home"
 import About from "./pages/About"
-import Login, {loginLoader} from "./pages/Login.jsx"
+import Login, {loginLoader, loginAction} from "./pages/Login.jsx"
 
 import Vans, {loader as vansLoader} from "./pages/Vans/Vans.jsx"
 import VanDetail, {loader as vanLoader} from "./pages/Vans/VanDetail.jsx"
@@ -27,7 +26,9 @@ import HostVanPricing from "./pages/Host/HostVanPricing.jsx"
 import HostVanPhotos from "./pages/Host/HostVanPhotos.jsx"
 
 import "./server.js"
-import { requireAuth } from "./utils.js"
+import { requireAuth, initializeApp } from "./utils.js"
+
+localStorage.clear()
 
 const router = createBrowserRouter(createRoutesFromElements(
      <Route path="/" element={<Layout />}>
@@ -49,6 +50,8 @@ const router = createBrowserRouter(createRoutesFromElements(
                path="login" 
                element={<Login />} 
                loader={loginLoader}
+               action={loginAction}
+               errorElement={<ErrorElement />}
           />
           <Route 
                path="host" 
@@ -79,8 +82,10 @@ const router = createBrowserRouter(createRoutesFromElements(
      </Route>
 ))
 
-
 function App() {
+
+     initializeApp()
+
      return (
           <RouterProvider router={router} />
      )
