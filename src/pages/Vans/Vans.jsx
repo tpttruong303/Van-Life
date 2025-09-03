@@ -1,10 +1,16 @@
-import { useState } from "react"
-import { useSearchParams, Link, useLoaderData } from "react-router-dom"
+import { 
+     useSearchParams, 
+     useLoaderData, 
+     Link,
+     Await
+} from "react-router-dom"
+import { Suspense } from "react"
 
 import { getVans } from "../../api.js"
 
 export async function loader() {
-     return await getVans()
+     const vans = getVans()
+     return {vans}
 }
 
 function Vans() {
@@ -13,12 +19,27 @@ function Vans() {
      const typeFilter = searchParams.get("type")
      const vansInfo = useLoaderData()
 
-     const displayedVans = typeFilter ? 
-          vansInfo.filter(
-               van => van.type.toLowerCase() === typeFilter
-          ) : vansInfo
+     function handleFilterChange(key, value) {
+          setSearchParams(prevParams => {
+               if (value === null) prevParams.delete(key)
+               else prevParams.set(key, value) 
+               return prevParams
+          })
+     }
 
-     const vanListItems = displayedVans.map(van => {
+     const typeButtons = ["simple", "luxury", "rugged"].map(
+          (type) => (
+               <button 
+                    onClick={() => handleFilterChange("type", type)} 
+                    className={`filter-button-${type}`}
+                    key={type}
+               >
+                    {type}
+               </button>
+          )
+     )
+
+     function createVanElement(van) {
           return (
                <Link 
                     key={van.id} 
@@ -47,27 +68,17 @@ function Vans() {
                     </div>
                </Link>
           )
-     })
-
-     function handleFilterChange(key, value) {
-          setSearchParams(prevParams => {
-               if (value === null) prevParams.delete(key)
-               else prevParams.set(key, value) 
-               return prevParams
-          })
      }
 
-     const typeButtons = ["simple", "luxury", "rugged"].map(
-          (type) => (
-               <button 
-                    onClick={() => handleFilterChange("type", type)} 
-                    className={`filter-button-${type}`}
-                    key={type}
-               >
-                    {type}
-               </button>
-          )
-     )
+     function createVanListItems(vans) {
+          const displayedVans = typeFilter ? 
+               vans.filter(
+                    van => van.type.toLowerCase() === typeFilter
+               ) : vans
+
+          const vanListItems = displayedVans.map(van => createVanElement(van))
+          return vanListItems
+     }
 
      return (
           <div className="main-vans">
@@ -79,9 +90,17 @@ function Vans() {
                          </div>
                          <span onClick={() => handleFilterChange("type", null)}>Clear filters</span>
                     </div>
-                    <div className="main-vans-container">
-                         {vanListItems}
-                    </div>
+                    <Suspense fallback={<h2>Loading...</h2>}>
+                         <Await resolve={vansInfo.vans}>
+                              {(resolvedVansInfo) => {
+                                   return (
+                                        <div className="main-vans-container">
+                                             {createVanListItems(resolvedVansInfo)}
+                                        </div>
+                                   )
+                              }}
+                         </Await>
+                    </Suspense>
                </div>
           </div>
      )
