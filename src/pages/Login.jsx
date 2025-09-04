@@ -15,13 +15,14 @@ export function loginLoader({request}) {
 }
 
 export async function loginAction({request}) {
+     const lastPathname = new URL(request.url).searchParams.get("path") || "/host"
      const formData = await request.formData()
      const email = formData.get("email")
      const password = formData.get("password")
      try {
           const auth = await loginUser({email, password})
           localStorage.setItem("isLoggedIn", "true")
-          const response = replace("/host")
+          const response = replace(lastPathname)
           response.body = true
           return response
      }
