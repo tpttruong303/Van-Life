@@ -7,14 +7,14 @@ import {
 
 import { Suspense } from "react"
 
-import { getHostVans } from "../../api"
+import { getVan } from "../../api"
 import { requireAuth } from "../../utils"
 
 export async function loader({ params, request }) {
      const authResponse = await requireAuth(new URL(request.url).pathname)
      if (authResponse) return authResponse
 
-     const data = getHostVans(params.id)
+     const data = getVan(params.id)
      return {data}
 }
 
@@ -56,7 +56,7 @@ function HostVanDetail() {
                <Suspense fallback={<h2>Loading...</h2>}>
                     <Await resolve={hostVanDetail.data}>
                          {(van) => {
-                              return createHostVanDetailElement(van[0])
+                              return createHostVanDetailElement(van)
                          }}
                     </Await>
                </Suspense>

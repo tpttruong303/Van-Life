@@ -7,10 +7,10 @@ import {
 
 import { Suspense } from "react"
 
-import { getVans } from "../../api"
+import { getVan } from "../../api"
 
 export async function loader({ params }) {
-     const data = getVans(params.id)
+     const data = getVan(params.id)
      return {data}
 }
 

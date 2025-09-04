@@ -15,7 +15,8 @@ export async function loader({request}) {
 
      if (authResponse) return authResponse
 
-     const vans = getHostVans()
+     const hostId = "123"
+     const vans = getHostVans(hostId)
      return {vans}
 }
 
